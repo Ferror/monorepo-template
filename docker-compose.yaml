@@ -1,0 +1,7 @@
+services:
+    tools:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+            - ./:/monorepo:delegate

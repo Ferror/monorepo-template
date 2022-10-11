@@ -1,0 +1,9 @@
+{
+    "name": "your-monorepo/your-monorepo",
+    "require": {
+        "php": ">=8.1"
+    },
+    "require-dev": {
+        "symplify/monorepo-builder": "^11.1"
+    }
+}
