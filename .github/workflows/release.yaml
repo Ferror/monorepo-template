@@ -1,0 +1,29 @@
+name: Packages Split
+
+on:
+    push: ~
+    workflow_dispatch: ~
+
+jobs:
+    release:
+        runs-on: ubuntu-latest
+
+        strategy:
+            fail-fast: false
+
+        steps:
+            -
+                name: Checkout Code
+                uses: actions/checkout@v3
+
+            -
+                name: Install Dependencies
+                uses: ramsey/composer-install@v2
+
+            -
+                name: Validate
+                run: vendor/bin/monorepo-builder validate
+
+            -
+                name: Release Dry Run
+                run: vendor/bin/monorepo-builder release v1.0 --dry-run
